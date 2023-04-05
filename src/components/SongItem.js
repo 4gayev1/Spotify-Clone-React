@@ -1,6 +1,6 @@
 import { Icon } from "icons";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { setCurrent } from "stores/player";
 
 const SongItem = ({ item, more }) => {
@@ -48,11 +48,11 @@ const SongItem = ({ item, more }) => {
         </button>
       </div>
 
-      <NavLink to={more ?? "#"}>
+      <li  key={item.id} to="/alma">
         <h6 className="overflow-hidden overflow-ellipsis whitespace-nowrap text-base font-semibold hover:underline">
           {item.title}
         </h6>
-      </NavLink>
+      </li>
 
       <p className="text-link text-xs mt-2">{item.description}</p>
     </NavLink>
